@@ -1,0 +1,50 @@
+@charset  "utf-8";
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd,input,textarea,select,pre, form, fieldset, th, td,figure,figcaption{margin: 0; padding: 0;}
+
+
+a{text-decoration: none;}
+
+ul,ol{list-style: none;}
+
+input,textarea,select,button{border:none; outline: none; background-color: transparent;}
+
+img{border:none;vertical-align: top;}
+textarea{resize:none;}
+em,i{font-style: none;}
+.fl{float: left; }
+.fr{float: right;}
+
+/*.clearfix:before,.clearfix:after{content:""; display:table;}
+.clearfix:after{clear:both;}
+.clearfix:{zoom:1;}
+*/
+.clearfix:after {
+	 visibility:hidden;
+	 display:block;
+	 font-size:0;
+	 content:"";
+	 clear:both;
+	 height:0;
+}
+.clearfix {
+ 	zoom:1;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset{
+    border: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+caption, th {
+    text-align: left;
+}
+
+abbr, acronym {
+    border: 0;
+}
