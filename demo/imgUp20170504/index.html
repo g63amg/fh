@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <style>
+.fl{float: left;}
+.big-photo{width: 200px;height: 200px;margin:0 30px 30px 0;border:1px solid #ccc;}
+    </style>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <!--<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>-->
+    <script>
+      //图片上传预览    IE是用了滤镜。
+/*        function previewImage(file) {
+              var MAXWIDTH  = 200; 
+              var MAXHEIGHT = 200;
+              var div = document.getElementById('preview');//包img的div
+              if (file.files && file.files[0]) {
+                  div.innerHTML ='<img id=imghead3 onclick=$("#previewImg").click()>';//隐藏的input id
+                  var img = document.getElementById('imghead');//img的id
+                  img.onload = function(){
+                    var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                    img.width  =  rect.width;
+                    img.height =  rect.height;
+    //                 img.style.marginLeft = rect.left+'px';
+                    img.style.marginTop = rect.top+'px';
+                  }
+                  var reader = new FileReader();
+                  reader.onload = function(evt){
+                    console.info(evt);
+                    img.src = evt.target.result;
+                }
+                  reader.readAsDataURL(file.files[0]);
+              } else {//兼容IE
+                var sFilter='filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+                file.select();
+                var src = document.selection.createRange().text;
+                div.innerHTML = '<img id=imghead>';//img的id
+                var img = document.getElementById('imghead');//img的id
+                img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+                var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+                status =('rect:'+rect.top+','+rect.left+','+rect.width+','+rect.height);
+                div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;"+sFilter+src+"\"'></div>";
+              }
+        }*/
+
+function previewImage(file) {
+      debugger;
+      if (file.value == "") {
+          alert("请上传图片");
+          return false;
+      } else {
+          if (!/\.(gif|jpg|jpeg|png|GIF|JPG|PNG)$/.test(file.value)) {
+              alert("图片类型必须是.gif,jpeg,jpg,png中的一种");
+              file.value = "";
+              return false;
+          }
+      }
+
+      var MAXWIDTH = 200;
+      var MAXHEIGHT = 200;
+      var div = $(file).prev();
+      var img = $(file).siblings().children();
+
+    var imgObj = img[0];
+    imgObj.onload = function() {
+      var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, 200, 200);
+      imgObj.width = rect.width;
+      imgObj.height = rect.height;
+      //img.style.marginLeft = rect.left+'px';
+      imgObj.style.marginTop = rect.top + 'px';
+    }
+    var reader = new FileReader();
+   //var imgsrc = '';
+    reader.onload = function(evt) {
+      //imgsrc  = evt.target.result;
+      $(imgObj).attr('src', evt.target.result);
+    }
+    reader.readAsDataURL(file.files[0]);
+}
+
+function clacImgZoomParam(maxWidth, maxHeight, width, height) {
+  var param = {
+      top: 0,
+      left: 0,
+      width: width,
+      height: height
+  };
+  if (width > maxWidth || height > maxHeight) {
+      rateWidth = width / maxWidth;
+      rateHeight = height / maxHeight;
+
+      if (rateWidth > rateHeight) {
+          param.width = maxWidth;
+          param.height = maxHeight; //Math.round(height / rateWidth);
+      } else {
+          param.width = maxWidth; //Math.round(width / rateHeight);
+          param.height = maxHeight;
+      }
+  }
+  param.left = 0 //Math.round((maxWidth - param.width) / 2);
+  param.top = 0 //Math.round((maxHeight - param.height) / 2);
+  return param;
+}
+</script> 
+<script >
+  $(function() {
+      $('img').click(function() {
+          $(this).parent().next().click();
+      })
+  });
+</script>
+</head>
+<body>
+<!-- <div id="addCommodityIndex"> -->
+   
+            
+             <!--input-group start-->
+            <div class="input-group row clearfix">
+                <div class="col-sm-9 big-photo fl">
+                	<div id="preview">
+                        <img border="0" src="img/photo_icon.jpg" width="200" height="200">
+                     </div>         
+                    <input type="file" onchange="previewImage(this)" style="display: none;" >
+                	<!--<input id="uploaderInput" class="uploader__input" style="display: none;" type="file" accept="" multiple="">-->
+                </div>
+                <div class="col-sm-9 big-photo fl">
+                    <div id="preview2"  class="preview">
+                        <img border="0" src="img/photo_icon.jpg" width="200" height="200">
+                     </div>         
+                    <input type="file" onchange="previewImage(this)" style="display: none;">
+                    <!--<input id="uploaderInput" class="uploader__input" style="display: none;" type="file" accept="" multiple="">-->
+                </div>
+                   <div class="col-sm-9 big-photo fl">
+                    <div id="preview">
+                        <img id="imghead3" border="0" src="img/photo_icon.jpg" width="200" height="200">
+                     </div>         
+                    <input type="file" onchange="previewImage(this)" style="display: none;">
+                    <!--<input id="uploaderInput" class="uploader__input" style="display: none;" type="file" accept="" multiple="">-->
+                </div>
+                <div class="col-sm-9 big-photo fl">
+                    <div id="preview">
+                        <img border="0" src="img/photo_icon.jpg" width="200" height="200">
+                     </div>         
+                    <input type="file" onchange="previewImage(this)" style="display: none;">
+                    <!--<input id="uploaderInput" class="uploader__input" style="display: none;" type="file" accept="" multiple="">-->
+                </div>
+            </div>
+            <!--input-group end-->
+       
+<!-- </div> -->
+
+</body>
+</html>
