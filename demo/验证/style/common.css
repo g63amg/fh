@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/* CSS Document */
+body{min-width:1200px; _width:1200px;/*word-break:break-all;*/}
+.comWidth{width:980px;margin-left:auto;margin-right:auto;}
+.hide{display:none;}
+.none{visibility:hidden;}
+
+
+.logIn{width: 300px;padding: 20px 0 30px;margin: 60px auto;border:1px solid #1ab394;border-radius: 5px;}
+.logIn_tit{height: 30px;line-height: 30px;text-align: center;font-size: 26px;margin-bottom: 26px;}
+.logIn_con{padding: 0 30px;}
+.logIn_text input,.logIn_pass input{width: 228px;padding: 8px 5px;border:1px solid #ccc;}
+.logIn_text{}
+.form_error{height: 22px;line-height: 22px;color:#C90000;}
+.auto_logIn{margin: 5px 0 20px;}
+.auto_logIn input,
+.auto_logIn span{float: left;}
+.auto_logIn a{float: right;color: #1ab394;}
+.auto_logIn input{margin-top: 2px;}
+.auto_logIn span,
+.auto_logIn a{line-height: 1;}
+.sub_btn{width: 100%;}
+.sub_btn input{width: 100%;height: 36px;color: #fff;background-color:  #1ab394;font-size: 18px;cursor: pointer;}
+
+
+.register{margin-top: 50px;}
+.register_tit{height: 30px;line-height: 30px; margin-bottom: 26px;}
+.register_email,
+.register_code{margin-bottom: 26px;}
+.register_email label,
+.register_email input,
+.register_email span,
+.register_code label,
+.register_code input,
+.register_code span,
+.register_code a{float: left;}
+.register_email label,
+.register_code label{width: 100px;height: 38px;line-height: 38px;}
+.register_email input{width: 228px;padding: 8px 5px;border:1px solid #ccc;}
+.register_email span,
+.register_code span{line-height: 38px;color:#C90000;margin-left: 5px;}
+.register_code input{width: 112px;padding: 8px 5px;border:1px solid #ccc;}
+.register_code a{width: 114px;height: 38px;line-height: 38px;text-align: center;color:#fff;background-color: #1ab394;}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <title>666</title>
+    <link href="style/reset.css" type="text/css" rel="stylesheet">
+    <link href="style/common.css" type="text/css" rel="stylesheet">
+    <script src="js/jQuery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript"></script>
+</head>
+<body>
+<form action="" class="form-input">
+<div class="register comWidth">
+    <h3 class="register_tit">会员注册</h3>
+    <div class="register_con">
+        <div class="register_email clearfix">
+            <label for="">邮箱</label>
+            <input type="text" placeholder="请输入邮箱" valid-isEmail="true|邮箱输入有误">
+            <span class="form_error none"></span>
+        </div>
+        <div class="register_email clearfix">
+            <label for="">手机号</label>
+            <input type="text" placeholder="请输入手机号" valid-isMobile="true|手机号输入有误">
+            <span class="form_error none"></span>
+        </div>
+        <div class="register_email clearfix">
+            <label for="">密码</label>
+            <input type="password" placeholder="请输入密码" valid-isDoublePass="true|手机号输入有误" id="password" valid-ismyps="true|密码由6-20位数字或字母组成">
+            <span class="form_error none"></span>
+        </div>
+        <div class="register_email clearfix">
+            <label for="">确认密码</label>
+            <input type="password" placeholder="请输入密码" valid-isDoublePass="true|两次输入密码不一致">
+            <span class="form_error none"></span>
+        </div>
+        <div class="register_code clearfix">
+            <label for="">验证码</label>
+            <input type="text" placeholder="请输入验证码" valid-isAsso="true|验证码输入有误">
+            <a href="javascript:;">发送验证码</a>
+            <span class="form_error none"></span>
+        </div>
+        <div class="sub_btn">
+            <input type="submit" value="注 册">
+        </div>
+    </div><!--logIn_con-->
+</div><!--logIn-->
+</form>
+</body>
+</html>
